@@ -20,7 +20,7 @@ const AboutSection = () => {
                 <button>Contact Us</button>
             </div>
             <div className="image">
-                <img src={home1} alt="home1"></img>
+                <img src={home1} alt="guy with a video-camera"></img>
             </div>
         </div>
     )
