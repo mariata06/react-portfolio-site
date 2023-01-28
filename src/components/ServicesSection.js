@@ -1,4 +1,5 @@
 import React from 'react';
+//images
 import home2 from '../img/home2.png';
 //import icons
 import clock from '../img/clock.svg';
