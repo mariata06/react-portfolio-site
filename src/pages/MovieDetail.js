@@ -4,13 +4,15 @@ import styled from 'styled-components';
 //new Syntax (useLocation instead useHistory)
 import {useLocation} from 'react-router-dom';
 import { MovieState } from '../movieState';
+//Animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from './animation';
 
 const MovieDetail = () => {
     const history = useLocation();
     const url = history.pathname;
     const [movies, setMovies] = useState(MovieState);
     const [movie, setMovie] = useState(null);
-    // console.log(history);
 
     //useEffect
     useEffect(() => {
@@ -18,10 +20,12 @@ const MovieDetail = () => {
         setMovie(currentMovie[0]);
     }, [movies, url])
    
+    //Имитирует переход на страницы the-athlete, the-racer, good-times c помощью useLocation 
+    //по клику на изображение со страницы OurWork. В реальных сайтах это должно работать через api
     return(
         <>
            {movie && (
-                <Details>
+                <Details exit="exit" variants={pageAnimation} initial="hidden" animate="show">
                     <HeadLine>
                         <h2>{movie.title}</h2>
                         <img src={movie.mainImg} alt="movie" />
@@ -40,7 +44,7 @@ const MovieDetail = () => {
     )
 }    
 
-const Details =styled.div`
+const Details = styled(motion.div)`
     color: white;
 `;
 

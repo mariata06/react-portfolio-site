@@ -5,10 +5,20 @@ import {Link} from 'react-router-dom';
 import athlete from '../img/athlete-small.png';
 import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
+//Animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from './animation';
+
 
 const OurWork = () => {
     return(
-        <Work>
+        <Work 
+            exit="exit" 
+            variants={pageAnimation} 
+            initial="hidden" 
+            animate="show"
+            style={{ background: "#fff"}}
+        >
             <Movie>
                 <h1>The Athlete</h1>
                 <div className='line'></div>
@@ -34,16 +44,17 @@ const OurWork = () => {
     )
 }    
 
-const Work = styled.div`
+const Work = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
-    padding: 5rem 10rem;
+    padding: 10rem 10rem;
     h2 {
         padding: 1rem 0 rem;
     }
 `;
 
 const Movie = styled.div`
+    position: relative;
     padding-bottom: 10rem;
     .line {
         height: 0.5rem;
@@ -54,6 +65,13 @@ const Movie = styled.div`
         width: 100%;
         height: 70vh;
         object-fit: cover;
+    }
+    h1 {
+        color: black;
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
     }
 `;
 
