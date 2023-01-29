@@ -7,7 +7,7 @@ import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 //Animations
 import { motion } from 'framer-motion';
-import { pageAnimation } from './animation';
+import { pageAnimation } from '../animation';
 
 
 const OurWork = () => {
