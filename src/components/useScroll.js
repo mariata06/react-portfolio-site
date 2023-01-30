@@ -6,7 +6,7 @@ export const useScroll = () => {
     const controls = useAnimation();
     controls.mount(); // разобраться (добавлен для устранение ошибки)
     //useInView передает во view true или false в зависимости от появления элемента(element) при скролле с порогом treshold 
-    const [element, view] = useInView({ threshold: 0.5});
+    const [element, view] = useInView({ threshold: 0.3});
     if (view) {
         controls.start('show');
     } else { 
